@@ -1,7 +1,7 @@
 # Deploy Common Actions
 Push a common Github Action yaml script from a centralized repository to many repositories. For use in a repo where your primary action is contained. For example, if you or your organization has 20 repos of Android applications, all of which build in a similar way, you can utilize one master yaml script, and deploy that script to each repo with this action.
 
-If you have 30 repos, utilize this action 30 times in your yaml script to push out a common Github Action. Helpful for those organizations working on a large number of similar applications.
+If you have 30 repos, utilize this action 30 times in your yaml script to push out a common Github Action workflow. Helpful for those organizations working on a large number of similar applications.
 
 
 ## Action Inputs
@@ -17,7 +17,17 @@ If you have 30 repos, utilize this action 30 times in your yaml script to push o
 
 
 ## Example
-This example will create a release when a repository dispatch event with the event type "create_release_collection" is sent:
+Here's an example of how you can utilize this action and a recommended github folder structure:
+
+    .
+    ├── .github/workflow/deploy.yml   # Your workflow to deploy the script, as shown in the example below.
+    ├── my-common-workflow            # Your common workflow you wish to deploy. 
+      └──  .github
+        └── workflows
+          └── action-to-deploy.yaml
+    └── README.md
+    
+This example will deploy your common Github Action workflow when the event type "deploy_updated_workflow" is sent:
 
 ```yml
 name: Deploy Github Action
