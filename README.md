@@ -38,7 +38,7 @@ jobs:
       uses: actions/checkout@722adc6
       
     - name: Deploy GHA to WN-SDK-TEMPORARY
-      uses: ./.github/deploy-gha-action
+      uses: MikeHamilton-RW/deploy-common-actions@v1.0
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
         USER: "my-user-name-or-organization"
