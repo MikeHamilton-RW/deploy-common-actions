@@ -20,7 +20,7 @@ If you have 30 repos, utilize this action 30 times in your yaml script to push o
 Here's an example of how you can utilize this action and a recommended github folder structure:
 
     .
-    ├── .github/workflow/deploy.yml   # Your workflow to deploy the script, as shown in the example below.
+    ├── .github/workflows/deploy.yml   # Your workflow to deploy the script, as shown in the example below.
     ├── my-common-workflow            # Your common workflow you wish to deploy. 
       └──  .github
         └── workflows
